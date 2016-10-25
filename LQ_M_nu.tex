@@ -1,0 +1,167 @@
+\documentclass[10pt,letterpaper,oneside]{article}
+\usepackage[letterpaper,margin=0.5in]{geometry}
+\usepackage{wrapfig}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+%\usepackage{luatex}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.1.0}
+\usepackage{feynmp}
+\begin{document}
+\textbf{LeptoQuark Mediated Neutrino Mass:} \\
+2 options: \begin{enumerate}
+\item $e_R = + (S) \implies$ tree level
+\item $e_R = - (S) \implies$ 1 loop level
+\end{enumerate}
+\Large
+\centering
+$m_{\nu}\propto x \left(M_d\right) x\prime$ \quad
+$m_{e}\propto x \left(M_u\right) x\prime \prime$ \quad
+$h \implies e^- e^+ \left(1+?\right)$ where $\mathcal{A}\sim m_e$ \\
+\normalsize
+\begin{itemize}
+\item Phenomenology of the LQ$\rightarrow$? and h$\rightarrow$? decays?!
+\item Rare processes!
+\end{itemize} 
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex (i);
+\vertex [right = of i] (a);
+\vertex [right = of a] (b);
+\vertex [right = of b] (c);
+\vertex [right = of c] (f);
+\vertex [below = of b] (d) {$<H>$};
+\vertex [above = of b] (u);
+\diagram*{
+(i) -- [fermion, edge label' = $\nu_L$] (a) -- [anti fermion, edge label' = $d_L$] (b),
+(b) -- [anti fermion, edge label' = $d_R$] (c) -- [fermion, edge label' = $\nu_R$] (f),
+(b) -- [scalar, insertion = 1] (d),
+(a) -- [charged scalar, quarter left, edge label = $\phi^{-1/3}$] (u)[cross],
+(u) -- [charged scalar, insertion = 0, quarter left, edge label = $\eta^{-1/3}$] (c),
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{Diagram contributing to Direac Neutrino Mass.}
+\label{fig:Mnu}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex (i);
+\vertex [right = of i] (a);
+\vertex [right = of a] (b);
+\vertex [right = of b] (c);
+\vertex [right = of c] (f);
+\vertex [below = of b] (d) {$<H>$};
+\vertex [above = of b] (u);
+
+\diagram* {
+(i) -- [fermion, edge label' = $e_L$] (a) -- [anti fermion, edge label' = $u_L$] (b),
+(b) -- [anti fermion, edge label' = $u_R$] (c) -- [fermion, edge label' = $e_R$] (f),
+(b) -- [scalar, insertion = 1] (d),
+(a) -- [charged scalar, quarter left, edge label = $\phi^{-1/3}$] (u),
+(u) -- [charged scalar, insertion = 0, quarter left, edge label = $\eta^{-1/3}$] (c),
+};
+\end{feynman}
+\end{tikzpicture}
+\caption{Diagram contributing to Dirac Charged Lepton Mass.}
+\label{fig:Me}
+\end{subfigure}
+\caption{LeptoQuark mediated 1 loop Lepton Mass Diagrams.}
+\end{figure}
+\begin{equation*}
+\feynmandiagram[horizontal=i to a]{
+i -- [scalar, edge label = H] a,
+a -- [anti fermion] f1[particle = $\overline{e^{-1}}$],
+a -- [fermion] f2[particle = $e^{-1}$],
+};
+\quad \Gamma \sim m_e ?
+\end{equation*}
+\begin{equation*}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex (i);
+\vertex [right = of i] (a);
+\vertex [right = of a] (d);
+\vertex [above = of d] (b);
+\vertex [below = of d] (c);
+\vertex [right = of b] (f1){$\overline{e^{-1}}$};
+\vertex [right = of c] (f2){$e^{-1}$};
+
+\diagram* {
+(i) -- [scalar, edge label = H] (a),
+(a) -- [fermion, edge label = $u_L$] (b),
+(a) -- [anti fermion, edge label = $u_R$] (c),
+(b) -- [anti fermion] (f1)[particle = $\overline{e^{-1}}$],
+(c) -- [fermion] (f2)[particle = $e^{-1}$],
+(b) -- [charged scalar, edge label = $\phi^{-1/3}$] (d),
+(d) -- [charged scalar, insertion = 0, edge label = $\eta^{-1/3}$] (c),
+};
+\end{feynman}
+\end{tikzpicture}
+\quad \Gamma \sim m_e f \left(1+?\right)?
+\end{equation*}
+\begin{centering}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex (i);
+\vertex [right = of i] (a);
+\vertex [right = of a] (m1){$<H>$};
+\vertex [right = of m1] (d);
+\vertex [above = of d] (b);
+\vertex [below = of d] (c);
+\vertex [right = of d] (m2){$<H>$};
+\vertex [right = of m2] (e);
+\vertex [right = of e] (f);
+
+\diagram* {
+(i) -- [fermion, edge label' = $\nu_L$] (a),
+(a) -- [anti fermion, edge label' = $d_L$] (c),
+(c) -- [fermion, edge label' = $d_L$] (e),
+(e) -- [anti fermion, edge label'=$\nu_L$] (f),
+(a) -- [charged scalar, edge label=$\phi^{-1/3}$] (b),
+(b) -- [anti charged scalar, edge label = $\phi^{-1/3}$] (e),
+(b) -- [charged scalar, edge label = $\chi^{-2/3}$] (d),
+(d) -- [charged scalar, edge label = $\rho^{-2/3}$] (c),
+(m1) -- [scalar, insertion=0] (d),
+(d) -- [scalar, insertion=1] (m2),
+};
+\end{feynman}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{feynman}
+\vertex (i);
+\vertex [right = of i] (a);
+\vertex [right = of a] (m1);
+\vertex [right = of m1] (d);
+\vertex [above = of d] (b);
+\vertex [left = of b] (u1){$<H>$};
+\vertex [below = of d] (c);
+\vertex [right = of d] (m2){$<H>$};
+\vertex [right = of m2] (e);
+\vertex [right = of e] (f);
+
+\diagram* {
+(i) -- [fermion, edge label' = $\nu_L$] (a),
+(a) -- [anti fermion, edge label' = $d_L$] (c),
+(c) -- [fermion, edge label' = $d_L$] (e),
+(e) -- [anti fermion, edge label'=$\nu_L$] (f),
+(a) -- [charged scalar, edge label=$\phi^{-1/3}$] (b),
+(b) -- [anti charged scalar, edge label = $\phi^{-1/3}$] (e),
+(b) -- [charged scalar, edge label = $\chi^{-2/3}$] (d),
+(d) -- [charged scalar, insertion=0, edge label = $\rho^{-2/3}$] (c),
+(u1) -- [scalar, insertion=0] (b),
+(d) -- [scalar, insertion=1] (m2),
+};
+\end{feynman}
+\end{tikzpicture}
+\end{centering}
+
+\end{document}
