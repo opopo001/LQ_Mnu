@@ -2,7 +2,7 @@
 \usepackage[letterpaper,margin=0.5in]{geometry}
 \usepackage{wrapfig}
 \usepackage{mathtools}
-\usepackage{amsmath}
+\usepackage{amsmath, cancel}
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 %\usepackage{luatex}
@@ -214,4 +214,23 @@ $\phi$ & 3 & 1 & -1/3 &  & 1 \\ \hline
 \mathcal{L}_{3D}\,&\subset\,\mathcal{M}_A \overline{A} A \\
 V(H,\phi)\,&=\, -m_1^2 \left|H\right|^2 + \frac{\lambda_1}{4} \left|H\right|^4 + m_2^2 \left|\phi\right|^2 + \frac{\lambda_2}{4} \left|\phi\right|^4 + \lambda_3 \left(H^{\dagger}H\right)\left|\phi\right|^2
 \end{align*}
+$\mathcal{L_{\text{eff mix}}}\,=\,
+\overline{\left(\begin{matrix}
+d_L & a_L^{-1/3}
+\end{matrix}\right)} \mathcal{M_{\text{da}}} 
+\left(\begin{matrix}
+d_R \\
+a_R
+\end{matrix}\right) +h.c.$ , $\quad$where $\underbrace{\mathcal{M_{\text{da}}}}_{6\times 6}\, = \, 
+\left(\begin{matrix}
+y_d \nu & 0 \\
+y_{\epsilon} \nu & M_A \\
+\end{matrix}\right)$
+\\
+Potential problems: \begin{itemize}
+\item $d^{-1/3}\, a^{-1/3}$ mixing and its experimental bounds. \\
+\item $\upsilon$ bound state bounds! \\
+\item $\cancel{CP}$ from phases in the $6\times 6$ mixing matrix! \\
+\item $\dots$
+\end{itemize}
 \end{document}
